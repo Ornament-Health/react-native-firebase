@@ -1,6 +1,7 @@
 package io.invertase.firebase.crashlytics;
 
 import android.util.Log;
+import android.os.Handler;
 
 // import com.crashlytics.android.Crashlytics;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
