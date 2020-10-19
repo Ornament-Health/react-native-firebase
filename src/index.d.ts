@@ -2050,12 +2050,12 @@ declare module 'react-native-firebase' {
         /**
          * Logs a custom non fatal exception.
          */
-        recordCustomError(name:string, message:string, stack?:customError[]):void;
+        // recordCustomError(name:string, message:string, stack?:customError[]):void;
 
         /**
          * Set a boolean value to show alongside any subsequent crash reports.
          */
-        setBoolValue(key: string, value: boolean): void;
+        // setBoolValue(key: string, value: boolean): void;
 
         /**
          * Set a float value to show alongside any subsequent crash reports.
@@ -2080,17 +2080,17 @@ declare module 'react-native-firebase' {
         /**
          * Set the user name to show alongside any subsequent crash reports.
          */
-        setUserName(userName: string): void;
+        // setUserName(userName: string): void;
 
         /**
          * Set the user email to show alongside any subsequent crash reports.
          */
-        setUserEmail(userEmail: string): void;
+        // setUserEmail(userEmail: string): void;
 
         /**
          * Enable Crashlytics reporting. Only avaliable when disabled automatic initialization
          */
-        enableCrashlyticsCollection(): void;
+        enableCrashlyticsCollection(boolValue: boolean): void;
       }
     }
 
