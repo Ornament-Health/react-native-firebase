@@ -26,7 +26,7 @@
     }
 
     RCT_EXPORT_METHOD(log:(NSString *)message) {
-        [[FIRCrashlytics crashlytics] log:@"first_arg, second_arg"];
+        [[FIRCrashlytics crashlytics] log:message];
     }
 
     RCT_EXPORT_METHOD(recordError:(nonnull NSNumber *)code domain:(NSString *)domain) {
