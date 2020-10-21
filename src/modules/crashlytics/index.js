@@ -58,46 +58,46 @@ export default class Crashlytics extends ModuleBase {
    * @param {string} message
    * @param {Object[]} stack Optional
    */
-  recordCustomError(name: string, message: string, stack?: Object[]): void {
-    if (typeof stack === 'undefined') {
-      if (typeof name === 'string' && typeof message === 'string') {
-        getNativeModule(this).recordCustomError(name, message, []);
-      } else {
-        throw new Error('Invalid parameter type!');
-      }
-    } else if (
-      typeof name === 'string' &&
-      typeof message === 'string' &&
-      Array.isArray(stack)
-    ) {
-      let hasKey = true;
+  // recordCustomError(name: string, message: string, stack?: Object[]): void {
+  //   if (typeof stack === 'undefined') {
+  //     if (typeof name === 'string' && typeof message === 'string') {
+  //       getNativeModule(this).recordCustomError(name, message, []);
+  //     } else {
+  //       throw new Error('Invalid parameter type!');
+  //     }
+  //   } else if (
+  //     typeof name === 'string' &&
+  //     typeof message === 'string' &&
+  //     Array.isArray(stack)
+  //   ) {
+  //     let hasKey = true;
 
-      stack.forEach(v => {
-        if (!Object.prototype.hasOwnProperty.call(v, 'fileName')) {
-          hasKey = false;
-        }
-      });
+  //     stack.forEach(v => {
+  //       if (!Object.prototype.hasOwnProperty.call(v, 'fileName')) {
+  //         hasKey = false;
+  //       }
+  //     });
 
-      if (hasKey) {
-        getNativeModule(this).recordCustomError(name, message, stack);
-      } else {
-        throw new Error('Missing required argument fileName!');
-      }
-    } else {
-      throw new Error('Invalid parameter type!');
-    }
-  }
+  //     if (hasKey) {
+  //       getNativeModule(this).recordCustomError(name, message, stack);
+  //     } else {
+  //       throw new Error('Missing required argument fileName!');
+  //     }
+  //   } else {
+  //     throw new Error('Invalid parameter type!');
+  //   }
+  // }
 
   /**
    * Set a boolean value to show alongside any subsequent crash reports.
    */
-  setBoolValue(key: string, value: boolean): void {
-    if (typeof key === 'string' && typeof value === 'boolean') {
-      getNativeModule(this).setBoolValue(key, value);
-    } else {
-      throw new Error('Invalid parameter type!');
-    }
-  }
+  // setBoolValue(key: string, value: boolean): void {
+  //   if (typeof key === 'string' && typeof value === 'boolean') {
+  //     getNativeModule(this).setBoolValue(key, value);
+  //   } else {
+  //     throw new Error('Invalid parameter type!');
+  //   }
+  // }
 
   /**
    * Set a float value to show alongside any subsequent crash reports.
@@ -146,29 +146,29 @@ export default class Crashlytics extends ModuleBase {
   /**
    * Set the user name to show alongside any subsequent crash reports.
    */
-  setUserName(userName: string): void {
-    if (typeof userName === 'string') {
-      return getNativeModule(this).setUserName(userName);
-    }
-    throw new Error('Invalid parameter type!');
-  }
+  // setUserName(userName: string): void {
+  //   if (typeof userName === 'string') {
+  //     return getNativeModule(this).setUserName(userName);
+  //   }
+  //   throw new Error('Invalid parameter type!');
+  // }
 
   /**
    * Set the user email to show alongside any subsequent crash reports.
    */
-  setUserEmail(userEmail: string): void {
-    if (typeof userEmail === 'string') {
-      getNativeModule(this).setUserEmail(userEmail);
-    } else {
-      throw new Error('Invalid parameter type!');
-    }
-  }
+  // setUserEmail(userEmail: string): void {
+  //   if (typeof userEmail === 'string') {
+  //     getNativeModule(this).setUserEmail(userEmail);
+  //   } else {
+  //     throw new Error('Invalid parameter type!');
+  //   }
+  // }
 
   /**
    * Enable Crashlytics reporting. Only avaliable when disabled automatic initialization
    */
-  enableCrashlyticsCollection(): void {
-    getNativeModule(this).enableCrashlyticsCollection();
+  enableCrashlyticsCollection(boolValue) {
+    getNativeModule(this).enableCrashlyticsCollection(boolValue);
   }
 }
 

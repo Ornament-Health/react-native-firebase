@@ -38,7 +38,10 @@ android {
   }
   buildTypes {
     release {
-      minifyEnabled false
+      // minifyEnabled false
+      // firebaseCrashlytics {
+      //   nativeSymbolUploadEnabled true
+      // }
     }
   }
   productFlavors {
@@ -153,40 +156,49 @@ dependencies {
 
   // Required dependencies
   //noinspection GradleCompatible
-  compileOnly "com.google.firebase:firebase-core:16.0.9"
-  compileOnly "com.google.android.gms:play-services-base:16.1.0"
+  // compileOnly "com.google.firebase:firebase-core:17.5.1"
+  // compileOnly "com.google.android.gms:play-services-base:17.4.0"
 
   /* -------------------------
    *   OPTIONAL FIREBASE SDKS
    * ------------------------- */
 
+  implementation platform("com.google.firebase:firebase-bom:${FIREBASE_BOM_VERSION}")
+  api "com.google.firebase:firebase-analytics"
+  api "com.google.firebase:firebase-database"
+  api "com.google.firebase:firebase-messaging"
+  api "com.google.firebase:firebase-perf"
+  api "com.google.firebase:firebase-crashlytics"
+  api "com.google.firebase:firebase-config"
+
+
   // Ads
-  compileOnly "com.google.firebase:firebase-ads:17.2.1" 
+  // compileOnly "com.google.firebase:firebase-ads:17.2.1" 
   // Authentication
-  compileOnly "com.google.firebase:firebase-auth:17.0.0"
+  // compileOnly "com.google.firebase:firebase-auth:17.0.0"
   // Analytics
-  compileOnly "com.google.firebase:firebase-analytics:16.5.0"
+  // compileOnly "com.google.firebase:firebase-analytics:16.5.0"
   // Performance Monitoring
-  compileOnly "com.google.firebase:firebase-perf:17.0.2"
+  // compileOnly "com.google.firebase:firebase-perf:17.0.2"
   // Remote Config
-  compileOnly "com.google.firebase:firebase-config:17.0.0"
+  // compileOnly "com.google.firebase:firebase-config:17.0.0"
   // Cloud Storage
-  compileOnly "com.google.firebase:firebase-storage:17.0.0"
+  // compileOnly "com.google.firebase:firebase-storage:17.0.0"
   // Dynamic Links (with invites sub-dependency for internal API)
-  compileOnly "com.google.firebase:firebase-dynamic-links:17.0.0"
-  compileOnly "com.google.firebase:firebase-invites:17.0.0"
+  // compileOnly "com.google.firebase:firebase-dynamic-links:17.0.0"
+  // compileOnly "com.google.firebase:firebase-invites:17.0.0"
   // Real-time Database
-  compileOnly "com.google.firebase:firebase-database:17.0.0"
+  // compileOnly "com.google.firebase:firebase-database:17.0.0"
   // Cloud Functions
-  compileOnly "com.google.firebase:firebase-functions:17.0.0"
+  // compileOnly "com.google.firebase:firebase-functions:17.0.0"
   // Cloud Firestore
-  compileOnly "com.google.firebase:firebase-firestore:19.0.2"
+  // compileOnly "com.google.firebase:firebase-firestore:19.0.2"
   // Cloud Messaging / FCM
-  compileOnly "com.google.firebase:firebase-messaging:18.0.0"
+  // compileOnly "com.google.firebase:firebase-messaging:18.0.0"
   // Crashlytics
-  compileOnly('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
-    transitive = true
-  }
+  // compileOnly('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+  //   transitive = true
+  // }
   /* --------------------------------
    *  OPTIONAL SUPPORT LIBS
    * -------------------------------- */

@@ -58,42 +58,42 @@ export default class Crashlytics extends ModuleBase {
    */
 
 
-  recordCustomError(name, message, stack) {
-    if (typeof stack === 'undefined') {
-      if (typeof name === 'string' && typeof message === 'string') {
-        getNativeModule(this).recordCustomError(name, message, []);
-      } else {
-        throw new Error('Invalid parameter type!');
-      }
-    } else if (typeof name === 'string' && typeof message === 'string' && Array.isArray(stack)) {
-      let hasKey = true;
-      stack.forEach(v => {
-        if (!Object.prototype.hasOwnProperty.call(v, 'fileName')) {
-          hasKey = false;
-        }
-      });
+  // recordCustomError(name, message, stack) {
+  //   if (typeof stack === 'undefined') {
+  //     if (typeof name === 'string' && typeof message === 'string') {
+  //       getNativeModule(this).recordCustomError(name, message, []);
+  //     } else {
+  //       throw new Error('Invalid parameter type!');
+  //     }
+  //   } else if (typeof name === 'string' && typeof message === 'string' && Array.isArray(stack)) {
+  //     let hasKey = true;
+  //     stack.forEach(v => {
+  //       if (!Object.prototype.hasOwnProperty.call(v, 'fileName')) {
+  //         hasKey = false;
+  //       }
+  //     });
 
-      if (hasKey) {
-        getNativeModule(this).recordCustomError(name, message, stack);
-      } else {
-        throw new Error('Missing required argument fileName!');
-      }
-    } else {
-      throw new Error('Invalid parameter type!');
-    }
-  }
+  //     if (hasKey) {
+  //       getNativeModule(this).recordCustomError(name, message, stack);
+  //     } else {
+  //       throw new Error('Missing required argument fileName!');
+  //     }
+  //   } else {
+  //     throw new Error('Invalid parameter type!');
+  //   }
+  // }
   /**
    * Set a boolean value to show alongside any subsequent crash reports.
    */
 
 
-  setBoolValue(key, value) {
-    if (typeof key === 'string' && typeof value === 'boolean') {
-      getNativeModule(this).setBoolValue(key, value);
-    } else {
-      throw new Error('Invalid parameter type!');
-    }
-  }
+  // setBoolValue(key, value) {
+  //   if (typeof key === 'string' && typeof value === 'boolean') {
+  //     getNativeModule(this).setBoolValue(key, value);
+  //   } else {
+  //     throw new Error('Invalid parameter type!');
+  //   }
+  // }
   /**
    * Set a float value to show alongside any subsequent crash reports.
    */
@@ -171,8 +171,8 @@ export default class Crashlytics extends ModuleBase {
    */
 
 
-  enableCrashlyticsCollection() {
-    getNativeModule(this).enableCrashlyticsCollection();
+  enableCrashlyticsCollection(boolValue) {
+    getNativeModule(this).enableCrashlyticsCollection(boolValue);
   }
 
 }
